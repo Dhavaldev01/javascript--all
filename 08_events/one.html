@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl click")  // feachers come deta hee
+    // }
+
+    // attachEvent()
+    // jQuary - on
+    
+
+    // document.getElementById('images').addEventListener("click", function(e){
+    // console.log("side the ulclicked ul")
+    // },false) 
+
+    // aya tame true and false bane lakhi sako
+    // => jo true lakhyu to tene chepture event krvay je by default no hoy  //// uper thi niche travel kare 
+    // console ans : bane ma owl per j clicke tay
+
+    /// side the ulclicked ul
+    //owl clicked
+   
+    // => false je by defaule hoy , tene bubal event kevay je ma te bubal ni jem niche thi uper jay 
+    // consple ans : 
+    //owl clicked
+    /// side the ulclicked ul
+//     document.getElementById('owl').addEventListener("click", function(e){
+   
+    
+//     console.log("owl clicked") 
+//     e.stopPropagation() // a line lakhvathi bubal ke cheper nay tah matr singal line j ans avse // consoleans : owl clicked
+//     },false)
+//     // type ,timestamp ,defaultprevented 
+//     // target ,toElement,srcElement ,currentTarget ,
+//     // clientX ,clienty ,screenx,screeny
+//     // altkey ,ctrikey ,shiftkey ,kerCode
+
+// document.getElementById('google').addEventListener('click', function(e){
+//     e.preventDefault();
+//    // e.stopPropagation();
+//     console.log("google click")
+   
+// },false)
+
+// document.querySelector('#images').addEventListener('click',function(e){
+//         console.log(e.target.parentNode) // img per click tay to image remove tay jay pan  li per click tay to  badha imge remove tay jay atale niche btavaya mujab code lakhvano
+//         let removeIt = e.target.parentNode
+//         removeIt.remove()
+//         //removeIt.parentNode.removeChild(removeIt)
+// })
+
+
+document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id)
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+        }
+
+        //removeIt.parentNode.removeChild(removeIt)
+})
+</script>
+</html>
